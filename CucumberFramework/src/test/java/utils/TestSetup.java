@@ -9,10 +9,10 @@ import pageObjects.PageObjectManager;
 public class TestSetup {
 
 	// Some times it is working with static webdriver
-	public    static WebDriver driver;
-	public   TestBase testBase;
-	public   PageObjectManager pageObjectManager;
-	public  GenericUtils genericUtils;
+	public WebDriver driver;
+	public TestBase testBase;
+	public PageObjectManager pageObjectManager;
+	public GenericUtils genericUtils;
 
 	public TestSetup() throws IOException {
 		testBase = new TestBase();

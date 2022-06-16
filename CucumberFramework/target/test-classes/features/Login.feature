@@ -7,7 +7,7 @@ Feature: Login to the application
   Scenario: Login to the application with the valid credentials   
     
     Given Launched the browser and open the login page   
-    When Login to the application with username "bangalore" and password "Puratesta1$"    
+    When Login to the application with username "puratesta" and password "Puratesta1$"    
     Then Verify the login is success
     
     

@@ -32,7 +32,6 @@ public class LoginStepDefination {
 //		testSetup.driver.get("https://demoqa.com/login");
 //		testSetup.driver.get("https://parabank.parasoft.com/parabank/index.htm");
 //		testSetup.driver.manage().window().maximize();
-		Thread.sleep(5000);
 		
 	}
 	
@@ -50,10 +49,9 @@ public class LoginStepDefination {
 //		testSetup.driver.findElement(By.id("password")).sendKeys(password);
 //		testSetup.driver.findElement(By.xpath("//button[text()='Login']")).click(); 
 //		testSetup.driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[1]/input")).sendKeys(username);
-		Thread.sleep(8000);
 	}
 	
-	@Then("Verify the login is success")
+	@Then("^Verify the login is success$")
 	public void verify_the_login_is_success() throws InterruptedException {
 //		testSetup.driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[2]/input")).sendKeys("nandi");
 //		Boolean logout=testSetup.driver.findElement(By.xpath("//button[text()='Log out']")).isDisplayed();
@@ -63,7 +61,6 @@ public class LoginStepDefination {
 		LoginPage loginpage=testSetup.pageObjectManager.getLoginPage();
 		Boolean logout1=loginpage.logoutButton(); 
 		Assert.assertTrue(logout1, "User is not logged to the application");	 
-	    Thread.sleep(5000);
 	
 	}
 
