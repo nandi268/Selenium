@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestBase {
 
@@ -20,20 +21,29 @@ public class TestBase {
 		Properties prop = new Properties();
 		prop.load(fis);
 		String url = prop.getProperty("qa");
+		String browser_properties=prop.getProperty("browser");
+		String browser_maven=System.getProperty("browser");
+		
+		// result =testcondition ? value1 : value2
+		
+		String browser=browser_maven!=null ? browser_maven : browser_properties;
 
 		if (driver == null) {
 
-			if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
+			if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
 				driver = new ChromeDriver();
 			}
-			if (prop.getProperty("browser").equalsIgnoreCase("firefox")) {
+			if (browser.equalsIgnoreCase("firefox")) {
 //				create the firefox instance
 			}
 
-			if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
+			if (browser.equalsIgnoreCase("edge")) {
 //				create the edge instance
+				System.setProperty("webdriver.edge.driver",
+						System.getProperty("user.dir") + "\\src\\test\\resources\\msedgedriver.exe");
+				driver = new EdgeDriver();
 			}
 
 			driver.get(url);
