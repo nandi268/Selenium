@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="master">
+<suite-files>
+<suite-file path="testngsuite1.xml"></suite-file>
+<suite-file path="testng2suite.xml"></suite-file>
+<suite-file path="testng3.xml"></suite-file>
+</suite-files>
+</suite>
+
+
+
